@@ -94,3 +94,54 @@
   footer p {
     margin: 0;
   }
+
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .rating input {
+    display: none; 
+  }
+  
+  .rating label {
+    font-size: 2rem;
+    color: #ccc; 
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .rating input:checked ~ label {
+    color: #0056b3  ;
+  }
+  
+  .rating label:hover,
+  .rating label:hover ~ label {
+    color: #0056b3; 
+  }
+  
+  .back-button {
+    display: inline-block;
+    background-color: #0056b3;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-right: 1350px;
+  }
+  
+  .back-button:hover {
+    background-color: #003d80; 
+    transform: scale(1.05); 
+  }
+  
+  .back-button:active {
+    background-color: #002d5b; 
+    transform: scale(0.95);
+  }
