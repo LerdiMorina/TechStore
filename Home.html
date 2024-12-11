@@ -1,9 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="Home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore Home</title>
+  <link rel="stylesheet" href="Home.css">
 </head>
 <body>
-    
+
+  <!-- Header Section -->
+  <header>
+    <h1>TechStore</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Image Slider Section -->
+  <section class="slider">
+    <div class="slides">
+      <div class="slide active">
+        <img src="pics/laptop.png" alt="Tech Product 1">
+      </div>
+      <div class="slide">
+        <img src="pics/logo.PNG" alt="Tech Product 2">
+      </div>
+      <div class="slide">
+        <img src="https://via.placeholder.com/1200x500?text=Tech+Product+3" alt="Tech Product 3">
+      </div>
+    </div>
+    <div class="controls">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <section class="products">
+    <h2>Top Products</h2>
+    <div class="product-cards">
+      <!-- Repeat this block for each product card -->
+      <div class="product-card">
+        <img src="pics/laptop.png" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$199.99</p>
+        <button class="buy-btn">Buy Now</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>$299.99</p>
+        <button class="buy-btn">Buy Now</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="pics/laptop.png" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$199.99</p>
+        <button class="buy-btn">Buy Now</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="pics/laptop.png" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$199.99</p>
+        <button class="buy-btn">Buy Now</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="pics/laptop.png" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$199.99</p>
+        <button class="buy-btn">Buy Now</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="pics/laptop.png" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$199.99</p>
+        <button class="buy-btn">Buy Now</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+      <!-- Add 6 more product cards similarly -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 TechStore</p>
+  </footer>
+
+  <script src="Home.js"></script>
 </body>
 </html>
