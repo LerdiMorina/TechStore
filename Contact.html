@@ -1,8 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us - TechStore</title>
     <link rel="stylesheet" href="Contact.css">
 </head>
+
 <body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TechStore</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="Contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-details">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>We are here to assist you! Reach out to us via the details below:</p>
+                    <ul>
+                        <li><strong>Email:</strong> support@techstore.com</li>
+                        <li><strong>Phone:</strong> +1 (800) 123-4567</li>
+                        <li><strong>Address:</strong> 123 Tech Avenue, Silicon Valley, CA</li>
+                    </ul>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Get In Touch</h2>
+                    <form action="#" method="POST">
+                        <div class="input-field">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TechStore. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
+
 </html>
