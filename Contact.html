@@ -10,22 +10,10 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>TechStore</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="Contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    
+    <div id="navbar-placeholder"></div>
 
+    
     <section class="contact-section">
         <div class="container">
             <div class="contact-details">
@@ -66,6 +54,15 @@
             <p>&copy; 2024 TechStore. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        fetch('Navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading Navbar:', error));
+    </script>
 </body>
 
 </html>

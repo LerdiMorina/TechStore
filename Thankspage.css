@@ -67,8 +67,7 @@ a:hover {
     gap: 20px;
 }
 
-.home-btn,
-.shop-btn {
+.home-btn{
     background-color: #0078d4; /* Soft blue shade for buttons */
     padding: 15px 40px;
     border-radius: 8px;
@@ -83,8 +82,7 @@ a:hover {
     color: white; /* Ensure button text is white */
 }
 
-.home-btn:hover,
-.shop-btn:hover {
+.home-btn:hover {
     background-color: #0056b3; /* Darker blue on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Subtle shadow effect */
@@ -98,13 +96,9 @@ a:hover {
     background-color: #0078d4;
 }
 
-.shop-btn {
-    background-color: #009688; /* Greenish-blue for "Continue Shopping" */
-}
 
-.shop-btn:hover {
-    background-color: #00796b;
-}
+
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -120,7 +114,7 @@ a:hover {
         font-size: 16px;
     }
 
-    .home-btn, .shop-btn {
+    .home-btn {
         padding: 12px 30px;
         font-size: 16px;
     }
