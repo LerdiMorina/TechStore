@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStore - Products</title>
+    <title>Cart - TechStore</title>
     <link rel="stylesheet" href="Cart.css">
+    <div id="navbar-placeholder"></div>
+  <script>
+    fetch('Navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading Navbar:', error));
+</script>
 </head>
+
+
 <body>
     <div class="container">
         <div class="product-card">
