@@ -1,0 +1,134 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    padding: 50px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.order-card {
+    display: flex;
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.product-info {
+    display: flex;
+    margin-right: 40px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.product-image img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.product-details {
+    margin-left: 20px;
+}
+
+.product-details h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.product-details ul {
+    list-style: none;
+}
+
+.product-details ul li {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-top: 15px;
+}
+
+.order-form {
+    flex: 2;
+    max-width: 500px;
+}
+
+.order-form h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.order-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-form label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.order-form input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.payment-methods {
+    margin-top: 20px;
+}
+
+.payment-methods h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.payment-methods label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #ccc;
+}
+
+.order-button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.order-button button {
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.order-button button:hover {
+    background-color: #45a049;
+}
