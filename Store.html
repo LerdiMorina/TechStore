@@ -1,9 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Store</title>
     <link rel="stylesheet" href="Store.css">
+    <script>
+        fetch('Navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading Navbar:', error));
+    </script>
 </head>
 <body>
     
+    <header> 
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <nav>
+    </nav>
+
+    <div class="dropdowns">
+        <label for="itemsPerPage">Items per page:</label>
+        <select id="itemsPerPage" onchange="updateItemsPerPage()">
+            <option value="4">4</option>
+            <option value="8">8</option>
+            <option value="12">12</option>
+            <option value="16">16</option>
+        </select>
+
+        <label for="sortOptions">Sort by:</label>
+        <select id="sortOptions" onchange="sortProducts()">
+            <option value="lowToHigh">Price: Low to High</option>
+            <option value="highToLow">Price: High to Low</option>
+            <option value="discount">Discount: High to Low</option>
+        </select>
+    </div>
+
+    <section id="productGrid">
+    </section>
+
+    <script>
+        const products = [
+            { name: "Product 1", price: 100, discount: 10 },
+            { name: "Product 2", price: 200, discount: 15 },
+            { name: "Product 3", price: 300, discount: 20 },
+        ];
+
+        function displayProducts(itemsPerPage) {
+            const productGrid = document.getElementById('productGrid');
+            productGrid.innerHTML = "";
+            const items = products.slice(0, itemsPerPage);
+            items.forEach(product => {
+                const discountedPrice = product.price * (1 - product.discount / 100);
+                productGrid.innerHTML += `
+                    <div class="product">
+                        <img src="foto/laptop.png" alt="${product.name}">
+                        <h2>${product.name}</h2>
+                        <p>Price: $${product.price}</p>
+                        <p>Discount: ${product.discount}%</p>
+                        <p>Final Price: $${discountedPrice.toFixed(2)}</p>
+                        <div class="buttons">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="buy-now">Buy Now</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function updateItemsPerPage() {
+            const itemsPerPage = document.getElementById('itemsPerPage').value;
+            displayProducts(itemsPerPage);
+        }
+
+        function sortProducts() {
+            const sortBy = document.getElementById('sortOptions').value;
+            if (sortBy === "lowToHigh") {
+                products.sort((a, b) => a.price - b.price);
+            } else if (sortBy === "highToLow") {
+                products.sort((a, b) => b.price - a.price);
+            } else if (sortBy === "discount") {
+                products.sort((a, b) => b.discount - a.discount);
+            }
+            updateItemsPerPage();
+        }
+
+        displayProducts(4);
+    </script>
 </body>
 </html>

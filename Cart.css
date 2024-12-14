@@ -8,7 +8,34 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  padding: 20px;
+  padding: 0; /* Remove padding to align navbar properly */
+  margin: 0; /* Remove margin to align navbar properly */
+}
+
+#navbar-placeholder {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Navbar background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Space inside the navbar */
+  position: sticky; /* Make it stick to the top */
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.navbar a:hover {
+  color: #3498db;
 }
 
 .container {
@@ -16,6 +43,7 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding: 20px; /* Add padding around products */
 }
 
 .product-card {
