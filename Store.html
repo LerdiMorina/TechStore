@@ -38,18 +38,31 @@
     <section id="productGrid"></section>
 
     <script>
-        const products = [
-            { name: "Product 1", price: 100, discount: 10 },
-            { name: "Product 2", price: 200, discount: 15 },
-            { name: "Product 3", price: 300, discount: 20 },
-        ];
+       const products = [
+    { name: "Laptop", price: 1000, discount: 10, image: "pics/laptop1.png", specs: "8GB RAM, 512GB SSD, 15.6\" Display" },
+    { name: "Smartphone", price: 600, discount: 5, image: "pics/smartphone.png", specs: "4GB RAM, 64GB Storage, 6.5\" Display" },
+    { name: "Headphones", price: 150, discount: 20, image: "pics/headphones.png", specs: "Noise Cancelling, Bluetooth 5.0" },
+    { name: "Smartwatch", price: 250, discount: 15, image: "pics/smartwatch.png", specs: "Heart Rate Monitor, GPS, Waterproof" },
+    { name: "Tablet", price: 400, discount: 10, image: "pics/tablet.png", specs: "10\" Display, 64GB Storage" },
+    { name: "Mouse", price: 30, discount: 25, image: "pics/mouse.png", specs: "Wireless, Ergonomic" },
+    { name: "Keyboard", price: 50, discount: 30, image: "pics/keyboard.png", specs: "Mechanical, RGB" },
+    { name: "Monitor", price: 300, discount: 10, image: "pics/monitor.png", specs: "24\" Full HD, IPS Panel" },
+    { name: "Product 9", price: 200, discount: 10, image: "pics/laptop2.png", specs: "8GB RAM, 1TB HDD" },
+    { name: "Product 10", price: 150, discount: 25, image: "pics/smartphone2.png", specs: "6GB RAM, 128GB Storage" },
+    { name: "Product 11", price: 180, discount: 5, image: "pics/headphones2.png", specs: "Bluetooth 4.0" },
+    { name: "Product 12", price: 220, discount: 12, image: "pics/smartwatch2.png", specs: "GPS, Heart Rate Monitor" },
+    { name: "Product 13", price: 550, discount: 8, image: "pics/laptop3.png", specs: "16GB RAM, 512GB SSD" },
+    { name: "Product 14", price: 350, discount: 18, image: "pics/keyboard2.png", specs: "RGB Backlit" },
+    { name: "Product 15", price: 120, discount: 10, image: "pics/mouse2.png", specs: "Wireless, Ergonomic" },
+    { name: "Product 16", price: 700, discount: 30, image: "pics/monitor2.png", specs: "27\" 4K UHD" }
+];
 
 function displayProducts(itemsPerPage) {
     const productGrid = document.getElementById('productGrid');
-    productGrid.innerHTML = "";
+    productGrid.innerHTML = ""; 
     const items = products.slice(0, itemsPerPage); 
     items.forEach(product => {
-        const discountedPrice = product.price * (1 - product.discount / 100);
+        const discountedPrice = product.price * (1 - product.discount / 100); 
         productGrid.innerHTML += `
             <div class="product-card">
                 <div class="product-image">
@@ -72,8 +85,8 @@ function displayProducts(itemsPerPage) {
 }
 
 function updateItemsPerPage() {
-    const itemsPerPage = parseInt(document.getElementById('itemsPerPage').value, 10); 
-    displayProducts(itemsPerPage);
+    const itemsPerPage = parseInt(document.getElementById('itemsPerPage').value, 10);
+    displayProducts(itemsPerPage); 
 }
 
 function sortProducts() {
@@ -86,9 +99,10 @@ function sortProducts() {
         products.sort((a, b) => b.discount - a.discount);
     }
     updateItemsPerPage(); 
+}
 
 displayProducts(4);
-}
+
 
 document.getElementById('itemsPerPage').addEventListener('change', updateItemsPerPage);
 document.getElementById('sortOptions').addEventListener('change', sortProducts);

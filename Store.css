@@ -32,7 +32,6 @@ body {
   padding: 20px;
 }
 
-
 .product-card {
   background-color: white;
   border-radius: 10px;
@@ -81,7 +80,6 @@ body {
   color: #27ae60;
 }
 
-
 .buy-btn {
   margin-top: 15px;
   padding: 10px 20px;
@@ -113,7 +111,7 @@ button.cart-btn:hover {
   background-color: #424242;
 }
 
-
+/* Navbar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
