@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Store</title>
     <link rel="stylesheet" href="Store.css">
+    <div id="navbar-placeholder"></div>
     <script>
         fetch('Navbar.html')
             .then(response => response.text())
@@ -12,12 +13,14 @@
                 document.getElementById('navbar-placeholder').innerHTML = data;
             })
             .catch(error => console.error('Error loading Navbar:', error));
-    </script>
+    </script> 
 </head>
+
+
 <body>
-    <header> 
-        <div id="navbar-placeholder"></div>
-    </header>
+    
+       
+
 
     <div class="dropdowns">
         <label for="itemsPerPage">Items per page:</label>

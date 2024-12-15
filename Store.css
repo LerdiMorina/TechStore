@@ -1,132 +1,132 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
-#navbar-placeholder {
-  width: 100%;
-}
-
-.dropdowns {
-  text-align: center;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ddd;
-  margin-top: 20px;  
-}
-
-.dropdowns label {
-  margin-right: 10px;
-}
-
-
-#productGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px; 
-  justify-items: center;
-  padding: 20px;
-}
-
-.product-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 280px; 
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.product-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.product-info {
-  margin-top: 15px;
-}
-
-.product-info h2 {
-  font-size: 18px;
-  color: #333;
-}
-
-.price-info {
-  margin-top: 15px;
-  text-align: right;
-}
-
-.original-price {
-  text-decoration: line-through;
-  color: #777;
-}
-
-.discount {
-  color: #e74c3c;
-  font-size: 14px;
-}
-
-.total-price {
-  font-size: 16px;
-  font-weight: bold;
-  color: #27ae60;
-}
-
-.buy-btn {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 16px;
-}
-
-.buy-btn:hover {
-  background-color: #0075c3;
-}
-
-button.cart-btn {
-  background-color: #5d5d5e;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 10px;
-}
-
-button.cart-btn:hover {
-  background-color: #424242;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  color: white;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.navbar a:hover {
-  color: #3498db;
-}
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding-top: 100px;
+  }
+  
+  #navbar-placeholder {
+    width: 100%;
+  }
+  
+  .dropdowns {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    margin-top: 20px;  
+  }
+  
+  .dropdowns label {
+    margin-right: 10px;
+  }
+  
+  
+  #productGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    justify-items: center;
+    padding: 20px;
+  }
+  
+  .product-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .product-info {
+    margin-top: 15px;
+  }
+  
+  .product-info h2 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .price-info {
+    margin-top: 15px;
+    text-align: right;
+  }
+  
+  .original-price {
+    text-decoration: line-through;
+    color: #777;
+  }
+  
+  .discount {
+    color: #e74c3c;
+    font-size: 14px;
+  }
+  
+  .total-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #27ae60;
+  }
+  
+  .buy-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .buy-btn:hover {
+    background-color: #0075c3;
+  }
+  
+  button.cart-btn {
+    background-color: #5d5d5e;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  button.cart-btn:hover {
+    background-color: #424242;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .navbar a:hover {
+    color: #3498db;
+  }
