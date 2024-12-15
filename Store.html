@@ -15,13 +15,9 @@
     </script>
 </head>
 <body>
-    
     <header> 
         <div id="navbar-placeholder"></div>
     </header>
-
-    <nav>
-    </nav>
 
     <div class="dropdowns">
         <label for="itemsPerPage">Items per page:</label>
@@ -36,60 +32,81 @@
         <select id="sortOptions" onchange="sortProducts()">
             <option value="lowToHigh">Price: Low to High</option>
             <option value="highToLow">Price: High to Low</option>
-            <option value="discount">Discount: High to Low</option>
         </select>
     </div>
 
-    <section id="productGrid">
-    </section>
+    <section id="productGrid"></section>
 
     <script>
-        const products = [
-            { name: "Product 1", price: 100, discount: 10 },
-            { name: "Product 2", price: 200, discount: 15 },
-            { name: "Product 3", price: 300, discount: 20 },
-        ];
+       const products = [
+    { name: "Laptop", price: 1000, discount: 10, image: "pics/laptop1.png", specs: "8GB RAM, 512GB SSD, 15.6\" Display" },
+    { name: "Smartphone", price: 600, discount: 5, image: "pics/smartphone.png", specs: "4GB RAM, 64GB Storage, 6.5\" Display" },
+    { name: "Headphones", price: 150, discount: 20, image: "pics/headphones.png", specs: "Noise Cancelling, Bluetooth 5.0" },
+    { name: "Smartwatch", price: 250, discount: 15, image: "pics/smartwatch.png", specs: "Heart Rate Monitor, GPS, Waterproof" },
+    { name: "Tablet", price: 400, discount: 10, image: "pics/tablet.png", specs: "10\" Display, 64GB Storage" },
+    { name: "Mouse", price: 30, discount: 25, image: "pics/mouse.png", specs: "Wireless, Ergonomic" },
+    { name: "Keyboard", price: 50, discount: 30, image: "pics/keyboard.png", specs: "Mechanical, RGB" },
+    { name: "Monitor", price: 300, discount: 10, image: "pics/monitor.png", specs: "24\" Full HD, IPS Panel" },
+    { name: "Product 9", price: 200, discount: 10, image: "pics/laptop2.png", specs: "8GB RAM, 1TB HDD" },
+    { name: "Product 10", price: 150, discount: 25, image: "pics/smartphone2.png", specs: "6GB RAM, 128GB Storage" },
+    { name: "Product 11", price: 180, discount: 5, image: "pics/headphones2.png", specs: "Bluetooth 4.0" },
+    { name: "Product 12", price: 220, discount: 12, image: "pics/smartwatch2.png", specs: "GPS, Heart Rate Monitor" },
+    { name: "Product 13", price: 550, discount: 8, image: "pics/laptop3.png", specs: "16GB RAM, 512GB SSD" },
+    { name: "Product 14", price: 350, discount: 18, image: "pics/keyboard2.png", specs: "RGB Backlit" },
+    { name: "Product 15", price: 120, discount: 10, image: "pics/mouse2.png", specs: "Wireless, Ergonomic" },
+    { name: "Product 16", price: 700, discount: 30, image: "pics/monitor2.png", specs: "27\" 4K UHD" }
+];
 
-        function displayProducts(itemsPerPage) {
-            const productGrid = document.getElementById('productGrid');
-            productGrid.innerHTML = "";
-            const items = products.slice(0, itemsPerPage);
-            items.forEach(product => {
-                const discountedPrice = product.price * (1 - product.discount / 100);
-                productGrid.innerHTML += `
-                    <div class="product">
-                        <img src="foto/laptop.png" alt="${product.name}">
-                        <h2>${product.name}</h2>
-                        <p>Price: $${product.price}</p>
-                        <p>Discount: ${product.discount}%</p>
-                        <p>Final Price: $${discountedPrice.toFixed(2)}</p>
-                        <div class="buttons">
-                            <button class="add-to-cart">Add to Cart</button>
-                            <button class="buy-now">Buy Now</button>
-                        </div>
-                    </div>
-                `;
-            });
-        }
+function displayProducts(itemsPerPage) {
+    const productGrid = document.getElementById('productGrid');
+    productGrid.innerHTML = "";
+    const items = products.slice(0, itemsPerPage); 
+    items.forEach(product => {
+        const discountedPrice = product.price * (1 - product.discount / 100);
+        productGrid.innerHTML += `
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h2>${product.name}</h2>
+                    <p class="specs">Specs: ${product.specs}</p>
+                </div>
+                <div class="price-info">
+                    <p class="original-price">$${product.price.toFixed(2)}</p>
+                    <p class="discount">Discount: ${product.discount}%</p>
+                    <p class="total-price">Price after Discount: $${discountedPrice.toFixed(2)}</p>
+                    <button class="cart-btn">Add to Cart</button>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+        `;
+    });
+}
 
-        function updateItemsPerPage() {
-            const itemsPerPage = document.getElementById('itemsPerPage').value;
-            displayProducts(itemsPerPage);
-        }
+function updateItemsPerPage() {
+    const itemsPerPage = parseInt(document.getElementById('itemsPerPage').value, 10); 
+    displayProducts(itemsPerPage);
+}
 
-        function sortProducts() {
-            const sortBy = document.getElementById('sortOptions').value;
-            if (sortBy === "lowToHigh") {
-                products.sort((a, b) => a.price - b.price);
-            } else if (sortBy === "highToLow") {
-                products.sort((a, b) => b.price - a.price);
-            } else if (sortBy === "discount") {
-                products.sort((a, b) => b.discount - a.discount);
-            }
-            updateItemsPerPage();
-        }
+function sortProducts() {
+    const sortBy = document.getElementById('sortOptions').value;
+    if (sortBy === "lowToHigh") {
+        products.sort((a, b) => a.price - b.price);
+    } else if (sortBy === "highToLow") {
+        products.sort((a, b) => b.price - a.price);
+    } else if (sortBy === "discount") {
+        products.sort((a, b) => b.discount - a.discount);
+    }
+    updateItemsPerPage(); 
 
-        displayProducts(4);
+displayProducts(4);
+
+
+document.getElementById('itemsPerPage').addEventListener('change', updateItemsPerPage);
+document.getElementById('sortOptions').addEventListener('change', sortProducts);
+
+
     </script>
 </body>
 </html>
