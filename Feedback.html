@@ -9,44 +9,43 @@
   <div id="navbar-placeholder"></div>
 
   <script>
-        fetch('Navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading Navbar:', error));
+    fetch('Navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading Navbar:', error));
 
-        fetch('Footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading Footer:', error));
+    fetch('Footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading Footer:', error));
 
-        const footerStyle = document.createElement('link');
-        footerStyle.rel = 'stylesheet';
-        footerStyle.href = 'Footer.css'; 
-        document.head.appendChild(footerStyle);
+    const footerStyle = document.createElement('link');
+    footerStyle.rel = 'stylesheet';
+    footerStyle.href = 'Footer.css'; 
+    document.head.appendChild(footerStyle);
 
-        // Function to validate the form
-        function validateForm() {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const feedback = document.getElementById('feedback').value.trim();
-            const rating = document.querySelector('input[name="star"]:checked');
+  
+    function validateForm(event) {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const feedback = document.getElementById('feedback').value.trim();
+      const rating = document.querySelector('input[name="star"]:checked');
 
-            if (!name || !email || !feedback || !rating) {
-                alert("Please fill out all fields and select a rating.");
-                return false;
-            }
-            return true;
-        }
-    </script>
+      if (!name || !email || !feedback || !rating) {
+        alert("Please fill out all fields and select a rating.");
+        event.preventDefault();  
+        return false;
+      }
+    }
+  </script>
 </head>
 
 <body>
   <div class="feedback-container">
-   
     <header>
       <img src="pics/logo.PNG" width="350px" height="250px">
       <h1>Feedback</h1>
@@ -54,7 +53,7 @@
       <p>Please take a moment to share your thoughts with us!</p>
     </header>
 
-    <form action="#" method="POST" class="feedback-form" onsubmit="return validateForm()">
+    <form class="feedback-form" onsubmit="return validateForm(event)">
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -84,7 +83,7 @@
       </div>
 
       <br>
-      <button type="submit" class="submit-btn">Submit</button>
+      <button type="submit" class="submit-btn"><a href="Thankspage.html">Submit</a></button>
       <br>
       <p>Thank you for taking the time to provide feedback. We appreciate your support!</p>
     </form>

@@ -6,34 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - TechStore Home</title>
   <link rel="stylesheet" href="Home.css">
-  <div id="navbar-placeholder"></div>
   
   <script>
-    fetch('Navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-      })
-      .catch(error => console.error('Error loading Navbar:', error));
+    // Script to load navbar and footer after the page content is loaded
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('Navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading Navbar:', error));
 
       fetch('Footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      })
-      .catch(error => console.error('Error loading Footer:', error));
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading Footer:', error));
 
-    
-    const footerStyle = document.createElement('link');
-    footerStyle.rel = 'stylesheet';
-    footerStyle.href = 'Footer.css'; 
-    document.head.appendChild(footerStyle);
+      const footerStyle = document.createElement('link');
+      footerStyle.rel = 'stylesheet';
+      footerStyle.href = 'Footer.css'; 
+      document.head.appendChild(footerStyle);
+    });
   </script>
 </head>
 
 <body>
+  <!-- Navbar placeholder -->
   <div id="navbar-placeholder"></div>
 
+  <!-- Slider Section -->
   <section class="slider">
     <div class="slides">
       <div class="slide">
@@ -43,7 +46,7 @@
         <img src="pics/Gamingkeyboard.png" alt="Tech Product 2">
       </div>
       <div class="slide">
-        <img src="pics/Skullcrusher.png" width="50px" height="50px" alt="Tech Product 3">
+        <img src="pics/Skullcrusher.png" alt="Tech Product 3">
       </div>
     </div>
 
@@ -53,113 +56,110 @@
     </div>
   </section>
 
+  <!-- Top Products Section -->
   <section class="products">
     <h2>Top Products</h2>
     <div class="container">
       <div class="product-card">
-          <div class="product-image">
-              <img src="pics/Computer.png" alt="Product 1">
-          </div>
-          <div class="product-info">
-              <h2><strong>Gaming PC</strong></h2>
-              <p class="specs"><strong>Specs: </strong><br><strong>RAM</strong>: 16GB, <br><strong>CPU</strong>: i5-13600K, <br><strong>GPU</strong>: RTX 3060 6Gb, <br><strong>Storage:</strong> 512GB SSD</p>
-          </div>
-          <div class="price-info">
-              <p class="original-price">$1089.00</p>
-              <p class="discount">Discount: 13%</p>
-              <p class="total-price">Price after Discount: $974.43</p>
-              <button class="buy-btn">Buy Now</button>
-              
-          </div>
+        <div class="product-image">
+          <img src="pics/Computer.png" alt="Gaming PC">
+        </div>
+        <div class="product-info">
+          <h2><strong>Gaming PC</strong></h2>
+          <p class="specs"><strong>Specs:</strong><br><strong>RAM</strong>: 16GB,<br><strong>CPU</strong>: i5-13600K,<br><strong>GPU</strong>: RTX 3060 6Gb,<br><strong>Storage:</strong> 512GB SSD</p>
+        </div>
+        <div class="price-info">
+          <p class="original-price">$1089.00</p>
+          <p class="discount">Discount: 13%</p>
+          <p class="total-price">Price after Discount: $974.43</p>
+          <button class="buy-btn">Buy Now</button>
+        </div>
       </div>
 
       <div class="product-card">
         <div class="product-image">
-            <img src="pics/Airpods.png" alt="Product 1">
+          <img src="pics/Airpods.png" alt="Airpods">
         </div>
         <div class="product-info">
-            <h2><strong>Airpods</strong></h2>
-            <p class="specs">Specs: <br><strong>Noisecandelling: </strong>Yes,<br> <strong>Bluetooth: </strong> 5.0,<br><strong>Generation: </strong>2nd Gen</p>
+          <h2><strong>Airpods</strong></h2>
+          <p class="specs">Specs: <br><strong>Noisecancelling: </strong>Yes,<br> <strong>Bluetooth: </strong>5.0,<br><strong>Generation: </strong>2nd Gen</p>
         </div>
         <div class="price-info">
-            <p class="original-price">$174.99</p>
-            <p class="discount">Discount: 5%</p>
-            <p class="total-price">Price after Discount: $166.24</p>
-            <button class="buy-btn">Buy Now</button>
-            
+          <p class="original-price">$174.99</p>
+          <p class="discount">Discount: 5%</p>
+          <p class="total-price">Price after Discount: $166.24</p>
+          <button class="buy-btn">Buy Now</button>
         </div>
-    </div>
+      </div>
 
-    <div class="product-card">
-      <div class="product-image">
-          <img src="pics/Gamingmouse.png" alt="Product 1">
-      </div>
-      <div class="product-info">
+      <div class="product-card">
+        <div class="product-image">
+          <img src="pics/Gamingmouse.png" alt="Gaming Mouse">
+        </div>
+        <div class="product-info">
           <h2><strong>Gaming Mouse</strong></h2>
-          <p class="specs"><strong>Specs:</strong><br><strong>Technology: </strong>Wired, <br><strong>Buttons:</strong> 8</p>
-      </div>
-      <div class="price-info">
+          <p class="specs"><strong>Technology:</strong> Wired,<br><strong>Buttons:</strong> 8</p>
+        </div>
+        <div class="price-info">
           <p class="original-price">$67.99</p>
           <p class="discount">Discount: 15%</p>
           <p class="total-price">Price after Discount: $57.79</p>
           <button class="buy-btn">Buy Now</button>
-          
+        </div>
       </div>
-  </div>
 
-  <div class="product-card">
-    <div class="product-image">
-        <img src="pics/Speaker.png" alt="Product 1">
-    </div>
-    <div class="product-info">
-        <h2>JBL Speaker</h2>
-        <p class="specs"><strong>Specs:</strong><br><strong>Bluetooth:</strong> 5.0<br> <strong>Features: </strong> Extra bass</p>
-    </div>
-    <div class="price-info">
-        <p class="original-price">$249.89.00</p>
-        <p class="discount">Discount: 15%</p>
-        <p class="total-price">Price after Discount: $212.41</p>
-        <button class="buy-btn">Buy Now</button>
-        
-    </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="pics/Speaker.png" alt="JBL Speaker">
+        </div>
+        <div class="product-info">
+          <h2>JBL Speaker</h2>
+          <p class="specs"><strong>Specs:</strong><br><strong>Bluetooth:</strong> 5.0<br><strong>Features:</strong> Extra bass</p>
+        </div>
+        <div class="price-info">
+          <p class="original-price">$249.89</p>
+          <p class="discount">Discount: 15%</p>
+          <p class="total-price">Price after Discount: $212.41</p>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
     </div>
   </section>
-    <br><br> 
 
-    <a href="Store.html" class="view-button">View more on Store</a>
-  
+  <a href="Store.html" class="view-button">View more on Store</a>
 
-    <script>
-      const slidesContainer = document.querySelector(".slides");
-      const slides = document.querySelectorAll(".slide");
-      const prevButton = document.querySelector(".prev");
-      const nextButton = document.querySelector(".next");
-      let currentIndex = 0;
-  
-      function updateSlidePosition() {
-        slidesContainer.style.transform = translateX(-${currentIndex * 100}%);
-      }
-  
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlidePosition();
-      }
-  
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlidePosition();
-      }
-  
-      prevButton.addEventListener("click", prevSlide);
-      nextButton.addEventListener("click", nextSlide);
-  
-      setInterval(nextSlide, 5000);
-    </script>
-
+  <!-- Footer placeholder -->
   <footer>
     <div id="footer-placeholder"></div>
   </footer>
 
+  <script>
+    // Slider functionality
+    const slidesContainer = document.querySelector(".slides");
+    const slides = document.querySelectorAll(".slide");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
+    let currentIndex = 0;
+
+    function updateSlidePosition() {
+      slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlidePosition();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlidePosition();
+    }
+
+    prevButton.addEventListener("click", prevSlide);
+    nextButton.addEventListener("click", nextSlide);
+
+    setInterval(nextSlide, 5000);
+  </script>
 </body>
 
 </html>
