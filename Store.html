@@ -15,13 +15,9 @@
     </script>
 </head>
 <body>
-    
     <header> 
         <div id="navbar-placeholder"></div>
     </header>
-
-    <nav>
-    </nav>
 
     <div class="dropdowns">
         <label for="itemsPerPage">Items per page:</label>
@@ -36,56 +32,68 @@
         <select id="sortOptions" onchange="sortProducts()">
             <option value="lowToHigh">Price: Low to High</option>
             <option value="highToLow">Price: High to Low</option>
-            <option value="discount">Discount: High to Low</option>
         </select>
     </div>
 
-    <section id="productGrid">
-    </section>
+    <section id="productGrid"></section>
 
     <script>
-      
+        const products = [
+            { name: "Product 1", price: 100, discount: 10 },
+            { name: "Product 2", price: 200, discount: 15 },
+            { name: "Product 3", price: 300, discount: 20 },
+        ];
 
-        function displayProducts(itemsPerPage) {
-            const productGrid = document.getElementById('productGrid');
-            productGrid.innerHTML = "";
-            const items = products.slice(0, itemsPerPage);
-            items.forEach(product => {
-                const discountedPrice = product.price * (1 - product.discount / 100);
-                productGrid.innerHTML += `
-                    <div class="product">
-                        <img src="foto/laptop.png" alt="${product.name}">
-                        <h2>${product.name}</h2>
-                        <p>Price: $${product.price}</p>
-                        <p>Discount: ${product.discount}%</p>
-                        <p>Final Price: $${discountedPrice.toFixed(2)}</p>
-                        <div class="buttons">
-                            <button class="add-to-cart">Add to Cart</button>
-                            <button class="buy-now">Buy Now</button>
-                        </div>
-                    </div>
-                `;
-            });
-        }
+function displayProducts(itemsPerPage) {
+    const productGrid = document.getElementById('productGrid');
+    productGrid.innerHTML = "";
+    const items = products.slice(0, itemsPerPage); 
+    items.forEach(product => {
+        const discountedPrice = product.price * (1 - product.discount / 100);
+        productGrid.innerHTML += `
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h2>${product.name}</h2>
+                    <p class="specs">Specs: ${product.specs}</p>
+                </div>
+                <div class="price-info">
+                    <p class="original-price">$${product.price.toFixed(2)}</p>
+                    <p class="discount">Discount: ${product.discount}%</p>
+                    <p class="total-price">Price after Discount: $${discountedPrice.toFixed(2)}</p>
+                    <button class="cart-btn">Add to Cart</button>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+        `;
+    });
+}
 
-        function updateItemsPerPage() {
-            const itemsPerPage = document.getElementById('itemsPerPage').value;
-            displayProducts(itemsPerPage);
-        }
+function updateItemsPerPage() {
+    const itemsPerPage = parseInt(document.getElementById('itemsPerPage').value, 10); 
+    displayProducts(itemsPerPage);
+}
 
-        function sortProducts() {
-            const sortBy = document.getElementById('sortOptions').value;
-            if (sortBy === "lowToHigh") {
-                products.sort((a, b) => a.price - b.price);
-            } else if (sortBy === "highToLow") {
-                products.sort((a, b) => b.price - a.price);
-            } else if (sortBy === "discount") {
-                products.sort((a, b) => b.discount - a.discount);
-            }
-            updateItemsPerPage();
-        }
+function sortProducts() {
+    const sortBy = document.getElementById('sortOptions').value;
+    if (sortBy === "lowToHigh") {
+        products.sort((a, b) => a.price - b.price);
+    } else if (sortBy === "highToLow") {
+        products.sort((a, b) => b.price - a.price);
+    } else if (sortBy === "discount") {
+        products.sort((a, b) => b.discount - a.discount);
+    }
+    updateItemsPerPage(); 
 
-        displayProducts(4);
+displayProducts(4);
+}
+
+document.getElementById('itemsPerPage').addEventListener('change', updateItemsPerPage);
+document.getElementById('sortOptions').addEventListener('change', sortProducts);
+
+
     </script>
 </body>
 </html>
