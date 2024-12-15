@@ -21,10 +21,10 @@
       })
       .catch(error => console.error('Error loading Footer:', error));
 
-    // Dynamically load Footer CSS
+  
     const footerStyle = document.createElement('link');
     footerStyle.rel = 'stylesheet';
-    footerStyle.href = 'Footer.css'; // Path to your Footer.css file
+    footerStyle.href = 'Footer.css'; 
     document.head.appendChild(footerStyle);
     </script> 
 </head>
@@ -36,20 +36,21 @@
 
 
     <div class="dropdowns">
-        <label for="itemsPerPage">Items per page:</label>
-        <select id="itemsPerPage" onchange="updateItemsPerPage()">
+        <label for="itemsPerPage" class="dropdown-label">Items per page:</label>
+        <select id="itemsPerPage" class="dropdown-btn" onchange="updateItemsPerPage()">
             <option value="4">4</option>
             <option value="8">8</option>
             <option value="12">12</option>
             <option value="16">16</option>
         </select>
-
-        <label for="sortOptions">Sort by:</label>
-        <select id="sortOptions" onchange="sortProducts()">
+    
+        <label for="sortOptions" class="dropdown-label">Sort by:</label>
+        <select id="sortOptions" class="dropdown-btn" onchange="sortProducts()">
             <option value="lowToHigh">Price: Low to High</option>
             <option value="highToLow">Price: High to Low</option>
         </select>
     </div>
+    
 
     <section id="productGrid"></section>
 
@@ -92,7 +93,6 @@ function displayProducts(itemsPerPage) {
                     <p class="original-price">$${product.price.toFixed(2)}</p>
                     <p class="discount">Discount: ${product.discount}%</p>
                     <p class="total-price">Price after Discount: $${discountedPrice.toFixed(2)}</p>
-                    <button class="cart-btn">Add to Cart</button>
                     <button class="buy-btn">Buy Now</button>
                 </div>
             </div>

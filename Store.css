@@ -7,16 +7,45 @@ body {
   
   
   .dropdowns {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     border-bottom: 1px solid #ddd;
-    margin-top: 20px;  
-  }
-  
-  .dropdowns label {
-    margin-right: 10px;
-  }
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.dropdown-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.dropdown-btn {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.dropdown-btn:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5);
+}
+
   
   
   #productGrid {
@@ -37,13 +66,19 @@ body {
     flex-direction: column;
     padding: 20px;
     margin-bottom: 20px;
-  }
+    height: 100%; 
+    justify-content: space-between; 
+}
   
   .product-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
+    width: 100%; 
+    height: auto; 
+    max-height: 200px; 
+    object-fit: contain; 
+    border-radius: 10px; 
+}
+
+
   
   .product-info {
     margin-top: 15px;
@@ -78,7 +113,7 @@ body {
   .buy-btn {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #0075c3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -88,21 +123,9 @@ body {
   }
   
   .buy-btn:hover {
-    background-color: #0075c3;
+    background-color: #3498db;
   }
   
-  button.cart-btn {
-    background-color: #5d5d5e;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-  }
-  
-  button.cart-btn:hover {
-    background-color: #424242;
-  }
+
+
   

@@ -60,7 +60,7 @@ button {
 
 .view-button {
   display: inline-block; 
-  background-color: #3498db; 
+  background-color: #0075c3; 
   color: white;
   text-decoration: none;
   padding: 12px 24px;
@@ -72,7 +72,7 @@ button {
 }
 
 .view-button:hover {
-  background-color: #0075c3;
+  background-color: #3498db;
   transform: scale(1.05);
 }
 
@@ -144,7 +144,7 @@ button:hover {
 .buy-btn {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #3498db;
+  background-color: #0075c3;
   color: white;
   border: none;
   border-radius: 5px;
@@ -154,23 +154,9 @@ button:hover {
 }
 
 .buy-btn:hover {
-  background-color: #0075c3;
+  background-color: #3498db;
 }
 
-button.cart-btn {
-  background-color: #5d5d5e;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 10px;
-}
-
-button.cart-btn:hover {
-  background-color: #424242;
-}
 .price-info {
   margin-top: 15px;
   text-align: right;
