@@ -6,11 +6,23 @@
     <title>Login - TechStore</title>
     <link rel="stylesheet" href="login.css">
     <a href="Home.html" class="back-button">Back to Home</a>
+    <script>
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading Footer:', error));
+
+        const footerStyle = document.createElement('link');
+        footerStyle.rel = 'stylesheet';
+        footerStyle.href = 'Footer.css';
+        document.head.appendChild(footerStyle);
+    </script>
 </head>
 <body>
-
     <div class="login-container">
-        <img src="pics/logo.PNG" width="200px" height="150px">
+        <img src="pics/logo.PNG" alt="TechStore Logo" class="logo">
         <h2>Login</h2>
         <form action="#" method="POST" class="login-form">
             <div class="input-group">
@@ -29,6 +41,9 @@
             </div>
         </form>
     </div>
-
 </body>
+<br>
+<footer>
+    <div id="footer-placeholder"></div>
+</footer>
 </html>

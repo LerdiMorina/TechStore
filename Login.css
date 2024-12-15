@@ -10,8 +10,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 20px;
+    min-height: 100vh;
+    padding-top: 250px;
 }
 
 .back-button {
@@ -28,10 +28,15 @@ body {
     transition: background-color 0.3s, transform 0.2s;
 }
 
+.back-button:hover {
+    background-color: #003f87;
+    transform: scale(1.05);
+}
+
 .login-container {
     background-color: white;
     border-radius: 10px;
-    padding: 40px 40px 30px 40px;
+    padding: 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
@@ -52,7 +57,6 @@ h2 {
 label {
     font-size: 16px;
     color: #333;
-    display: block;
     margin-bottom: 8px;
 }
 
@@ -65,6 +69,7 @@ input[type="password"] {
     border-radius: 8px;
     margin-top: 6px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
@@ -101,4 +106,22 @@ input[type="password"]:focus {
 
 .forgot-password a:hover {
     text-decoration: underline;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .login-container {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .back-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
 }

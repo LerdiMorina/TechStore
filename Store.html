@@ -13,6 +13,19 @@
                 document.getElementById('navbar-placeholder').innerHTML = data;
             })
             .catch(error => console.error('Error loading Navbar:', error));
+
+            fetch('Footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading Footer:', error));
+
+    // Dynamically load Footer CSS
+    const footerStyle = document.createElement('link');
+    footerStyle.rel = 'stylesheet';
+    footerStyle.href = 'Footer.css'; // Path to your Footer.css file
+    document.head.appendChild(footerStyle);
     </script> 
 </head>
 
@@ -113,4 +126,9 @@ document.getElementById('sortOptions').addEventListener('change', sortProducts);
 
     </script>
 </body>
+
+<footer>
+    <div id="footer-placeholder"></div>
+  </footer>
+  
 </html>

@@ -3,11 +3,10 @@ body {
     background-color: white;
     margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-    min-height: 100vh; 
-    padding: 20px;
-    padding-top: 120px; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+    padding-top: 250px;
 }
 
 form {
@@ -15,18 +14,24 @@ form {
     padding: 20px 30px;
     border-radius: 10px;
     width: 100%;
-    max-width: 600px;
+    max-width: 600px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
-
 
 
 h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
-    font-size: 24px; 
+    font-size: 24px;
+}
+
+.social-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 button.social-btn {
@@ -34,9 +39,9 @@ button.social-btn {
     height: 50px;
     background-color: transparent;
     border: 1px solid #ccc;
-    border-radius: 8px; 
+    border-radius: 8px;
     cursor: pointer;
-    margin: 0 5px; 
+    margin: 0 5px;
 }
 
 button.social-btn img {
@@ -45,18 +50,12 @@ button.social-btn img {
     object-fit: contain;
 }
 
-.social-btn-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px; 
-    margin-bottom: 20px;
-}
-
-input, select {
-    width: 100%; 
+input,
+select {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 15px; 
-    border-radius: 6px; 
+    margin-bottom: 15px;
+    border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 16px;
     box-sizing: border-box;
@@ -70,7 +69,7 @@ input, select {
 }
 
 .dob-container select {
-    flex: 1; 
+    flex: 1;
 }
 
 .password-strength,
@@ -97,11 +96,11 @@ input, select {
 
 button[type="submit"] {
     width: 100%;
-    padding: 12px; 
+    padding: 12px;
     background-color: #0056b3;
     color: white;
     border: none;
-    border-radius: 6px; 
+    border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
     box-sizing: border-box;
@@ -111,17 +110,18 @@ button[type="submit"]:hover {
     background-color: #003f87;
 }
 
-.form-footer {
-    text-align: center;
-    margin-top: 10px;
-}
 
-.form-footer a {
-    color: #0066cc;
-    text-decoration: none;
-    font-size: 14px;
-}
+@media screen and (max-width: 768px) {
+    form {
+        width: 100%;
+        padding: 20px;
+    }
 
-.form-footer a:hover {
-    text-decoration: underline;
+    .dob-container {
+        flex-direction: column;
+    }
+
+    .dob-container select {
+        margin-bottom: 10px;
+    }
 }
