@@ -5,11 +5,9 @@ body {
   padding: 0;
 }
 
-
 #navbar-placeholder {
   width: 100%;
 }
-
 
 .dropdowns {
   text-align: center;
@@ -26,7 +24,7 @@ body {
 
 #productGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px; 
   justify-items: center;
   padding: 20px;
@@ -111,7 +109,6 @@ button.cart-btn:hover {
   background-color: #424242;
 }
 
-/* Navbar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;

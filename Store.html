@@ -85,7 +85,7 @@ function displayProducts(itemsPerPage) {
 }
 
 function updateItemsPerPage() {
-    const itemsPerPage = parseInt(document.getElementById('itemsPerPage').value, 10);
+    const itemsPerPage = parseInt(document.getElementById('itemsPerPage').value, 10); 
     displayProducts(itemsPerPage); 
 }
 
@@ -98,7 +98,7 @@ function sortProducts() {
     } else if (sortBy === "discount") {
         products.sort((a, b) => b.discount - a.discount);
     }
-    updateItemsPerPage(); 
+    updateItemsPerPage();
 }
 
 displayProducts(4);
