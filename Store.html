@@ -55,22 +55,22 @@
 
     <script>
        const products = [
-    { name: "Laptop", price: 1000, discount: 10, image: "pics/Computer.png", specs: "8GB RAM, 512GB SSD, 15.6\" Display" },
-    { name: "Smartphone", price: 600, discount: 5, image: "pics/Airpods.png", specs: "4GB RAM, 64GB Storage, 6.5\" Display" },
-    { name: "Headphones", price: 150, discount: 20, image: "pics/Gamingmouse.png", specs: "Noise Cancelling, Bluetooth 5.0" },
-    { name: "Smartwatch", price: 250, discount: 15, image: "pics/Speaker.png", specs: "Heart Rate Monitor, GPS, Waterproof" },
-    { name: "Tablet", price: 400, discount: 10, image: "pics/Gamingkeyboard.png", specs: "10\" Display, 64GB Storage" },
-    { name: "Mouse", price: 30, discount: 25, image: "pics/Hdmi.png", specs: "Wireless, Ergonomic" },
-    { name: "Keyboard", price: 50, discount: 30, image: "pics/Skullcrusher.png", specs: "Mechanical, RGB" },
-    { name: "Monitor", price: 300, discount: 10, image: "pics/Ssd.png", specs: "24\" Full HD, IPS Panel" },
-    { name: "Product 9", price: 200, discount: 10, image: "pics/Usb.png", specs: "8GB RAM, 1TB HDD" },
-    { name: "Product 10", price: 150, discount: 25, image: "pics/Motherboard.png", specs: "6GB RAM, 128GB Storage" },
-    { name: "Product 11", price: 180, discount: 5, image: "pics/Gaminglaptop.png", specs: "Bluetooth 4.0" },
-    { name: "Product 12", price: 220, discount: 12, image: "pics/Rtx.png", specs: "GPS, Heart Rate Monitor" },
-    { name: "Product 13", price: 550, discount: 8, image: "pics/Ps5.png", specs: "16GB RAM, 512GB SSD" },
-    { name: "Product 14", price: 350, discount: 18, image: "pics/Iphone.png", specs: "RGB Backlit" },
-    { name: "Product 15", price: 120, discount: 10, image: "pics/Procesor.png", specs: "Wireless, Ergonomic" },
-    { name: "Product 16", price: 700, discount: 30, image: "pics/Gamingconsole.png", specs: "27\" 4K UHD" }
+    { name: "Gaming PC", price: 1089, discount: 13, image: "pics/Computer.png", specs: "<br><strong>RAM</strong>: 16GB, <br><strong>CPU</strong>: i5-13600K, <br><strong>GPU</strong>: RTX 3060 6Gb, <br><strong>Storage:</strong> 512GB SSD, " },
+    { name: "Airpods", price: 174.99, discount: 5, image: "pics/Airpods.png", specs: "<br><strong>Noisecandelling: </strong>Yes,<br> <strong>Bluetooth: </strong> 5.0,<br><strong>Generation: </strong>2nd Gen" },
+    { name: "Gaming Mouse", price: 67.99, discount: 15, image: "pics/Gamingmouse.png", specs: "<br><strong>Technology: </strong>Wired, <br><strong>Buttons:</strong> 8" },
+    { name: "JBL Speaker", price: 249.89, discount: 15, image: "pics/Speaker.png", specs: "<br><strong>Bluetooth:</strong> 5.0<br> <strong>Features: </strong> Extra bass" },
+    { name: "Logitech Gaming Keyboard", price: 179, discount: 25, image: "pics/Gamingkeyboard.png", specs: "<br><strong>Type: </strong> Mechanichal <br><strong>Color Modes: </strong> 10<br> <strong>Technology: </strong> Wired" },
+    { name: "HDMI Cable", price: 12, discount: 32, image: "pics/Hdmi.png", specs: "<br><strong>Resolution: </strong> Up to 4k<br><strong>Length: </strong> 3M" },
+    { name: "Skullcandy Crusher", price: 169.50, discount: 32, image: "pics/Skullcrusher.png", specs: "<br><strong>Technology: </strong> Wireless<br><strong>Features: </strong>Strong Bass<br><strong>Noisecancelling: </strong> Yes" },
+    { name: "SSD Samsung", price: 75, discount: 27, image: "pics/Ssd.png", specs: "<br><strong>Brand: </strong>Samsung<br><strong>Storage: </strong>512Gb" },
+    { name: "USB Sandisk", price: 22, discount: 10, image: "pics/Usb.png", specs: "<br><strong>Brand:</strong> Sandisk<br></strong><strong>Storage: </strong> 128Gb" },
+    { name: "Motherboard MSI PRO B760M-P", price: 129.00, discount: 5, image: "pics/Motherboard.png", specs: "<br><strong>HDMI Version: </strong> 1.4<br><strong>No.Slots: </strong>4" },
+    { name: "Lenovo Legion Gaming", price: 3989.99, discount: 7, image: "pics/Gaminglaptop.png", specs: "<br><strong>RAM</strong>: 32GB DDR6, <br><strong>CPU</strong>: i9-14600K, <br><strong>GPU</strong>: RTX 4090 24Gb, <br><strong>Storage:</strong> 1TB SSD, " },
+    { name: "RTX Graphics Card", price: 220, discount: 12, image: "pics/Rtx.png", specs: "<br><strong>Memory</strong>: 24GB GDDR6X<br><strong>Ports:</strong> 2" },
+    { name: "Alienware Monitor 24.5 inch", price: 550, discount: 8, image: "pics/Monitor.png", specs: "<br><strong>Resolution:</strong> FHD(1920x1080)<br><strong>Refresh Rate</strong>360Hz <br><strong>Ports: </strong>Display Port, Hdmi" },
+    { name: "Iphone 16 Pro", price: 1240.99, discount: 9, image: "pics/Iphone.png", specs: "<br><strong>Storage :</strong>512Gb <br><strong>Charging Port:</strong> USB Type C<br><strong>IOS Version:</strong> IOS 18" },
+    { name: "Intel Core i7", price: 576.50, discount: 10, image: "pics/Procesor.png", specs: "<br><strong>Threads: </strong>28<br><strong>Model: </strong>i7-14700K" },
+    { name: "Gaming Console", price: 429.99, discount: 24, image: "pics/Gamingconsole.png", specs: "<br><strong>Screen Resolution: </strong>1920x1080<br><strong>Gameplay Mode:</strong>Chip<br><strong>Bluetooth:</strong>Yes" }
 ];
 
 function displayProducts(itemsPerPage) {
