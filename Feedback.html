@@ -6,10 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Feedback - TechStore</title>
   <link rel="stylesheet" href="Feedback.css">
+  <div id="navbar-placeholder"></div>
+    <script>
+        fetch('Navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading Navbar:', error));
+    </script>
 </head>
-<body>
-  <a href="Home.html" class="back-button"> < Return </a>
 
+<body>
   <div class="feedback-container">
    
     <header>

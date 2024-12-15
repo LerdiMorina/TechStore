@@ -1,9 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - TechStore</title>
     <link rel="stylesheet" href="Register.css">
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('Navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading Navbar:', error));
+    </script>
 </head>
 <body>
-    
+
+    <form id="registerForm">
+        <h2>Create Your Account - TechStore</h2>
+        <div class="social-btn-container">
+            <button type="button" class="social-btn" onclick="socialSignUp('Google')">
+                <img src="pics/googleicon.png">
+            </button>
+            <button type="button" class="social-btn" onclick="socialSignUp('Facebook')">
+                <img src="pics/facebookicon.png">
+            </button>
+            <button type="button" class="social-btn" onclick="socialSignUp('Apple')">
+                <img src="pics/appleicon.png">
+            </button>
+        </div>
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <div class="dob-container">
+            <select id="month" required>
+                <option value="" disabled selected>Month</option>
+            </select>
+            <select id="day" required>
+                <option value="" disabled selected>Day</option>
+            </select>
+            <select id="year" required>
+                <option value="" disabled selected>Year</option>
+            </select>
+        </div>
+        <input type="password" id="password" placeholder="Create Password" required>
+        <p id="passwordStrength" class="password-strength"></p>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <p id="passwordMatch" class="password-match"></p>
+        <button type="submit">Register</button>
+        <div class="form-footer">
+            <a href="Login.html">Already have an account? Login</a>
+        </div>
+    </form>
+
+    <script>
+        function populateDateOptions() {
+            const monthSelect = document.getElementById('month');
+            const daySelect = document.getElementById('day');
+            const yearSelect = document.getElementById('year');
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            months.forEach((month, index) => {
+                const option = document.createElement('option');
+                option.value = index + 1;
+                option.textContent = month;
+                monthSelect.appendChild(option);
+            });
+            for (let i = 1; i <= 31; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                daySelect.appendChild(option);
+            }
+            for (let year = 1900; year <= 2024; year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+            }
+        }
+
+        const passwordInput = document.getElementById('password');
+        const passwordStrength = document.getElementById('passwordStrength');
+        passwordInput.addEventListener('input', function () {
+            const password = passwordInput.value;
+            let strengthMessage = '';
+            if (password.length < 6) {
+                strengthMessage = 'Password is too weak';
+                passwordStrength.classList.add('password-weak');
+                passwordStrength.classList.remove('password-strong');
+            } else {
+                strengthMessage = 'Password is strong';
+                passwordStrength.classList.add('password-strong');
+                passwordStrength.classList.remove('password-weak');
+            }
+            passwordStrength.textContent = strengthMessage;
+        });
+
+        document.getElementById('confirmPassword').addEventListener('input', function () {
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const password = passwordInput.value;
+            const passwordMatchMessage = document.getElementById('passwordMatch');
+            if (confirmPassword !== password) {
+                passwordMatchMessage.textContent = "Passwords do not match";
+                passwordMatchMessage.classList.add('password-match-error');
+                passwordMatchMessage.classList.remove('password-match-correct');
+            } else {
+                passwordMatchMessage.textContent = "Correct";
+                passwordMatchMessage.classList.add('password-match-correct');
+                passwordMatchMessage.classList.remove('password-match-error');
+            }
+        });
+
+        function socialSignUp(platform) {
+            alert(`Sign up with ${platform}`);
+        }
+
+        populateDateOptions();
+    </script>
+
 </body>
 </html>
