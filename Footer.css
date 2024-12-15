@@ -71,8 +71,8 @@ footer {
 }
 
 .social-icons a:hover {
-    text-decoration: underline; /* Add hover effect if desired */
-    color: white; /* Keep the text color unchanged */
+    text-decoration: underline;
+    color: white;
 }
 
 

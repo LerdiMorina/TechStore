@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="Home.css">
   
   <script>
-    // Script to load navbar and footer after the page content is loaded
     window.addEventListener('DOMContentLoaded', () => {
       fetch('Navbar.html')
         .then(response => response.text())
@@ -33,10 +32,8 @@
 </head>
 
 <body>
-  <!-- Navbar placeholder -->
   <div id="navbar-placeholder"></div>
 
-  <!-- Slider Section -->
   <section class="slider">
     <div class="slides">
       <div class="slide">
@@ -56,7 +53,6 @@
     </div>
   </section>
 
-  <!-- Top Products Section -->
   <section class="products">
     <h2>Top Products</h2>
     <div class="container">
@@ -128,13 +124,12 @@
 
   <a href="Store.html" class="view-button">View more on Store</a>
 
-  <!-- Footer placeholder -->
+ 
   <footer>
     <div id="footer-placeholder"></div>
   </footer>
 
   <script>
-    // Slider functionality
     const slidesContainer = document.querySelector(".slides");
     const slides = document.querySelectorAll(".slide");
     const prevButton = document.querySelector(".prev");
