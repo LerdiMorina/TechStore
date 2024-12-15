@@ -71,9 +71,10 @@ footer {
 }
 
 .social-icons a:hover {
-    /* Remove color inversion on hover */
-    text-decoration: none;
+    text-decoration: underline; /* Add hover effect if desired */
+    color: white; /* Keep the text color unchanged */
 }
+
 
 .footer-bottom {
     margin-top: 10px;
